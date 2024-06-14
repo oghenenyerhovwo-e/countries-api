@@ -5,7 +5,7 @@ import {
 document.addEventListener('DOMContentLoaded', async () => {
     const url = new URL(window.location.href)
     const searchedCountry = url.searchParams.get("country")
-
+    
     const countryFlag = document.getElementById('country_flag');
     const countryName = document.getElementById('country_name');
     const countryNativeName = document.getElementById('native_name');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const countries = await fetchCountries()
     const country = countries.find(country => country.name.toLowerCase() === searchedCountry)
-
+    console.log(country)
     let languages = ""
 
     for (let index = 0; index < country.languages.length; index++) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         languages = `${languages} ${language.name},`
     }
 
-    country.borders.forEach(border => {
+    country.borders && country.borders.length > 0 && country.borders.forEach(border => {
         const borderCountry = countries.find(country => country.alpha3Code === border)
         if(borderCountry){
             const card = document.createElement('div');

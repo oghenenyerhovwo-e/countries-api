@@ -27,6 +27,11 @@
     outline: none;
     font-size: var(--fs-300);
     background-color: transparent;
+    color: var(--clr-input);
+}
+
+.dark_mode .countries_filter_input > input{
+    color: var(--clr-input-dark);
 }
 
 .countries_filter_dropdown{
