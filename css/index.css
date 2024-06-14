@@ -1,0 +1,130 @@
+.countries{
+    padding-block: 2rem;
+}
+
+.countries_filter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+.countries_filter_input{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 20rem);
+    column-gap: 2rem;
+    font-size: var(--fs-300);
+}
+
+.countries_filter_input > input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: var(--fs-300);
+    background-color: transparent;
+}
+
+.countries_filter_dropdown{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 12rem);
+    row-gap: 2rem;
+    font-size: var(--fs-300);
+    position: relative;
+}
+
+.countries_filter_dropdown_placeholder{
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    column-gap: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.countries_filter_dropdown_placeholder > p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.countries_filter_dropdown_list{
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding-block: 0.5rem;
+    z-index: 9;
+}
+
+.countries_filter_dropdown_list > div{
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    opacity: 0;
+}
+
+.countries_filter_dropdown_list_show{
+    max-height: 200px; /* adjust based on your content height */
+    opacity: 1;
+}
+
+.countries_filter_dropdown_list_show > div{
+    opacity: 1;
+}
+
+#country_list{
+    display: grid;
+    /* we have to be careful with this, it mucks with the tab order */
+    grid-auto-flow: dense;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-auto-rows: 12rem auto auto;
+    container-type: inline-size;
+}
+
+.country_card {
+    --_padding: 1rem;
+  
+    grid-row: span 3;
+  
+    display: grid;
+    grid-template-rows: subgrid;
+    gap: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.country_card > img {
+    width: 100%;
+    max-height: 12rem;
+    object-fit: cover;
+}
+  
+.country_card_body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.country_card_body{
+    padding-inline: 2rem;
+}
+
+.country_card_body_details > div{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.2rem;
+    column-gap: 0.5rem;
+}

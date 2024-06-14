@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-5p5IrVtDIAGJw0+nb8Dy8qPYrMKD5tm5bAQrRzJYRnTr+fq81xN0Qe2eSo7i7SO1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/country.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <section class="card"> 
+        <section class="content-grid">
+            <header>
+                <h1>Where in the world?</h1>
+                <div id="toggle_mode">
+                    <div id="toggle_mode_icon">
+                        <i class="fa-moon"></i>
+                    </div>
+                    <p id="toggle_mode_text">Dark Mode</p>
+                </div>
+            </header>
+        </section>
+    </section>
+    <section class="content-grid">
+        <main id="country_details">
+            <div class="card back_btn spacing-md">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                <p>
+                    <a href="../pages/index.html">Back</a>
+                </p>
+            </div>
+            <div class="country_details_main">
+                <div class="country_details_main_img_container">
+                    <img id="country_flag">
+                </div>
+                <div class="country_details_main_text_container">
+                    <h2 id="country_name" class="spacing-md"></h2>
+                    <div class="spacing-md">
+                        <div class="country_details_main_text_details_row_one spacing-md">
+                            <div class="country_details_main_text_details_row_column">
+                                <div class="spacing-sm">
+                                    <h3>Native Name:</h3>
+                                    <p id="native_name"></p>
+                                </div>
+                                <div id=""population class="spacing-sm">
+                                    <h3>Population:</h3>
+                                    <p id="population"></p>
+                                </div>
+                                <div class="spacing-sm">
+                                    <h3>Region:</h3>
+                                    <p id="region"></p>
+                                </div>
+                                <div class="spacing-sm">
+                                    <h3>Sub Region:</h3>
+                                    <p id="subregion"></p>
+                                </div>
+                                <div>
+                                    <h3>Capital:</h3>
+                                    <p id="capital"></p>
+                                </div>
+                            </div>
+                            <div class="country_details_main_text_details_row_column">
+                                <div class="spacing-sm">
+                                    <h3>Top Level Domain:</h3>
+                                    <p id="top_level_domain"></p>
+                                </div>
+                                <div class="spacing-sm">
+                                    <h3>Currencies:</h3>
+                                    <p id="currencies"></p>
+                                </div>
+                                <div>
+                                    <h3>Languages:</h3>
+                                    <p id="languages"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="country_details_main_text_details_row_two">
+                            <h3>Boundary Countries:</h3>
+                            <div id="border_countries"></div>
+                        </div>
+                    </div>
+                    </div>
+                        
+                    </div>
+            </div>
+        </main>
+    </section>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/7d9d7d63e1.js" crossorigin="anonymous"></script>
+    <script type="module" src="../js/mode.js"></script>
+    <script type="module" src="../js/country.js"></script>
+</body>
+</html>

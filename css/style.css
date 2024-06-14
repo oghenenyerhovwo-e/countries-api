@@ -1,0 +1,214 @@
+/* Import Nunito Sans font with font weights 300, 600, 800 */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --font-family: 'Nunito Sans', system-ui;
+
+  --fs-200: clamp(0.75rem, calc(0.73rem + 0.004vw), 0.79rem);
+  --fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+  --fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+  --fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+  --fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+  --fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+  --fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+  --fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+
+  --clr-element: hsl(0, 0%, 100%);
+  --clr-text: hsl(200, 15%, 8%);
+  --clr-background: hsl(0, 0%, 98%);
+  --clr-input: hsl(0, 0%, 52%);
+  
+
+  --clr-element-dark: hsl(209, 23%, 22%);
+  --clr-text-dark: hsl(0, 0%, 100%);
+  --clr-background-dark: hsl(207, 26%, 17%);
+
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --box-shadow-dark: 0 4px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 600;
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+  transition: 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+h1{
+  font-size: var(--fs-500);
+  font-weight: 800;
+}
+
+h2{
+  font-size: var(--fs-400);
+  font-weight: 800;
+}
+
+h3{
+  font-size: var(--fs-300);
+}
+
+p{
+  font-size: var(--fs-300);
+}
+
+img{
+  font-size: var(--fs-300);
+  font-style: italic;
+}
+
+.content-grid {
+  --padding-inline: 2rem;
+  --content-max-width: 66.25rem;
+  --breakout-max-width: 95rem;
+
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 2
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(
+      100% - (var(--padding-inline) * 2),
+      var(--content-max-width)
+    )
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .full-width {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+img.full-width {
+  width: 100%;
+  max-height: 45vh;
+  object-fit: cover;
+}
+
+.spacing-xxs{
+  margin-bottom: 0.25rem;
+}
+
+.spacing-xs{
+  margin-bottom: 0.5rem;
+}
+
+.spacing-sm{
+  margin-bottom: 1rem;
+}
+
+.spacing-md{
+  margin-bottom: 2rem;
+}
+
+.spacing-lg{
+  margin-bottom: 4rem;
+}
+
+.spacing-xl{
+  margin-bottom: 6rem;
+}
+
+.spacing-xxl{
+  margin-bottom: 8rem;
+}
+
+/* header */
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 0.5rem;
+  padding-block: 1rem;
+}
+
+#toggle_mode{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+  cursor: pointer;
+}
+
+#toggle_mode_icon{
+  transform: rotate(-10deg);
+}
+
+/* card */
+.card{
+  background-color: var(--clr-element);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.2rem;
+}
+
+.dark_mode .card{
+  background-color: var(--clr-element-dark);
+  box-shadow: var(--box-shadow-dark);
+}
+
+/* button */
+
+.btnWrapper{
+  background-color: var(--clr-element);
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.btnWrapper:hover{
+  background-color: var(--clr-input);
+}
+
+.dark_mode .btnWrapper{
+  background-color: var(--clr-element-dark);
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.dark_mode .btnWrapper:hover{
+  background-color: var(--clr-background-dark);
+}
+
+
+/* Dark Mode */
+.dark_mode{
+  background-color: var(--clr-background-dark);
+  color: var(--clr-text-dark);
+}
+
